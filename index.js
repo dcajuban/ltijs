@@ -5,7 +5,7 @@ const lti = require('ltijs').Provider
  
 // Setup provider
 lti.setup('PASMADEUPKEY8123$', // Key used to sign cookies and tokens
-  { // Database configuration
+  { // Database configurations
     url: 'mongodb+srv://ltijs-dev.w5pfd.mongodb.net/?retryWrites=true&w=majority',
     connection: { user: 'lti', pass: 'oRUY12TydPS4CQtC' }
   },
