@@ -50,7 +50,7 @@ jobs:
     
         
     - name: Deploy to EB
-      uses: ltijs-dandev/beanstalk-deploy@v16
+      uses: einaregilsson/beanstalk-deploy@v16
       with:
         aws_access_key: ${{ env.awsKey }}
         aws_secret_key: ${{ env.awsSecret }}
