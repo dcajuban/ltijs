@@ -29,7 +29,7 @@ jobs:
         echo "awsKey=${{secrets.S_AWS_ACCESS_KEY_ID}}" | Out-File -FilePath $Env:GITHUB_ENV -Encoding utf-8 -Append 
         echo "awsSecret=${{ secrets.S_AWS_SECRET_ACCESS_KEY }}" | Out-File -FilePath $Env:GITHUB_ENV -Encoding utf-8 -Append 
         echo "awsEnv=Ltijs-dandev-env" | Out-File -FilePath $Env:GITHUB_ENV -Encoding utf-8 -Append 
-        echo "awsAppName=ltc-ltijs-dev" | Out-File -FilePath $Env:GITHUB_ENV -Encoding utf-8 -Append 
+        echo "awsAppName=ltijs-dandev" | Out-File -FilePath $Env:GITHUB_ENV -Encoding utf-8 -Append 
 
         
     - name: replace secrets
