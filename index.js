@@ -20,7 +20,7 @@ lti.setup('PASMADEUPKEY8123$', // Key used to sign cookies and tokens
     dynReg: {
       url: 'https://ltijs-dan.peregrineglobal.com', // Tool Provider URL. Required field.
       name: 'Tool Provider', // Tool Provider name. Required field.
-      logo: 'https://ltijs-dan.peregrineglobal.com/logo-50.svg', // Tool Provider logo URL.
+      logo: 'https://peregrineglobal.com/wp-content/uploads/pgs-seal-color-1.png', // Tool Provider logo URL.
       description: 'Tool Description', // Tool Provider description.
       redirectUris: ['https://ltijs-dan.peregrineglobal.com/launch'], // Additional redirection URLs. The main URL is added by default.
       customParameters: { key: 'value' }, // Custom parameters.
