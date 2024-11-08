@@ -1,5 +1,5 @@
 // const config = require('./config')
-require('dotenv').config()
+
 const path = require('path')
 const routes = require('./src/routes')
  
