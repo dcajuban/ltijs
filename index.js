@@ -15,7 +15,17 @@ lti.setup('PASMADEUPKEY8123$', // Key used to sign cookies and tokens
       secure: false, // Set secure to true if the testing platform is in a different domain and https is being used
       sameSite: '' // Set sameSite to 'None' if the testing platform is in a different domain and https is being used
     },
-    devMode: true // Set DevMode to false if running in a production environment with https
+    devMode: true, // Set DevMode to false if running in a production environment with https,
+    dynRegRoute: '/register',
+    dynReg: {
+      url: 'https://ltijs-dan.peregrineglobal.com', // Tool Provider URL. Required field.
+      name: 'Tool Provider', // Tool Provider name. Required field.
+      logo: 'https://ltijs-dan.peregrineglobal.com/logo-50.svg', // Tool Provider logo URL.
+      description: 'Tool Description', // Tool Provider description.
+      redirectUris: ['https://ltijs-dan.peregrineglobal.com/launch'], // Additional redirection URLs. The main URL is added by default.
+      customParameters: { key: 'value' }, // Custom parameters.
+      autoActivate: false // Whether or not dynamically registered Platforms should be automatically activated. Defaults to false.
+    }
   }
 )
  
