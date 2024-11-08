@@ -1,3 +1,4 @@
+const config = require('./config')
 const path = require('path')
  
 // Require Provider
@@ -18,13 +19,20 @@ lti.setup('PASMADEUPKEY8123$', // Key used to sign cookies and tokens
     devMode: true, // Set DevMode to false if running in a production environment with https,
     dynRegRoute: '/register',
     dynReg: {
-      url: 'https://ltijs-dan.peregrineglobal.com', // Tool Provider URL. Required field.
-      name: 'Peregrine Global Services (Dan)', // Tool Provider name. Required field.
-      logo: 'https://peregrineglobal.com/wp-content/uploads/pgs-seal-color-1.png', // Tool Provider logo URL.
-      description: 'Peregrine Global Services - DAN', // Tool Provider description.
-      redirectUris: ['https://ltijs-dan.peregrineglobal.com/launch'], // Additional redirection URLs. The main URL is added by default.
-      customParameters: { key: 'value' }, // Custom parameters.
-      autoActivate: false // Whether or not dynamically registered Platforms should be automatically activated. Defaults to false.
+      // url: 'https://ltijs-dan.peregrineglobal.com', // Tool Provider URL. Required field.
+      // name: 'Peregrine Global Services (Dan)', // Tool Provider name. Required field.
+      // logo: 'https://peregrineglobal.com/wp-content/uploads/pgs-seal-color-1.png', // Tool Provider logo URL.
+      // description: 'Peregrine Global Services - DAN', // Tool Provider description.
+      // redirectUris: ['https://ltijs-dan.peregrineglobal.com/launch'], // Additional redirection URLs. The main URL is added by default.
+      // customParameters: { key: 'value' }, // Custom parameters.
+      // autoActivate: false // Whether or not dynamically registered Platforms should be automatically activated. Defaults to false.
+      url: config.tool.url,
+      name: config.tool.name,
+      logo: config.tool.logoUrl,
+      description: config.tool.description,
+      redirectUris: config.tool.redirectUris,
+      customParameters: { },
+      autoActive: true
     }
   }
 )
