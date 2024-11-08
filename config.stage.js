@@ -18,7 +18,7 @@ var config = {
         url: 'mongodb+srv://ltijs-stage.w5pfd.mongodb.net/?retryWrites=true&w=majority',
         password: '~S_DB_MONOGDB_LTIJS_PASSWORD~'
     },
-    deepLinkSite: 'https://deeplinkg-stage.peregrineglobal.com',
+    deepLinkSite: 'https://deeplink-stage.peregrineglobal.com',
     pasApi: {
         baseUrl: 'https://api-stage.peregrineglobal.com'
     }
