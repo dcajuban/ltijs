@@ -34,6 +34,37 @@ lti.onConnect((token, req, res) => {
   console.log(token)
   return res.send('It\'s alive!')
 })
+
+// Deep Linking callback
+lti.onDeepLinking((token, req, res) => {
+  // Call redirect function to deep linking view
+  lti.redirect(res, '/deeplink')
+})
+
+// Deep Linking route, displays the resource selection view
+lti.app.get('/deeplink', async (req, res) => {
+  return res.sendFile(path.join(__dirname, '/public/resources.html'))
+})
+
+lti.app.post('/deeplink', async (req, res) => {
+  const resource = req.body
+
+  const items = [
+    {
+      type: 'ltiResourceLink',
+      title: resource.title,
+      custom: {
+        resourceurl: resource.path,
+        resourcename: resource.title
+      }
+    }
+  ]
+
+  // Creates the deep linking request form
+  const form = await lti.DeepLinking.createDeepLinkingForm(res.locals.token, items, { message: 'Successfully registered resource!' })
+
+  return res.send(form)
+})
  
 const setup = async () => {
   // Deploy server and open connection to the database
