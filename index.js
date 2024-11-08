@@ -1,5 +1,7 @@
 // const config = require('./config')
+require('dotenv').config()
 const path = require('path')
+const routes = require('./src/routes')
  
 // Require Provider
 const lti = require('ltijs').Provider
@@ -49,9 +51,11 @@ lti.onDeepLinking((token, req, res) => {
   lti.redirect(res, '/deeplink')
 })
 
+lti.app.use(routes)
+
 // Deep Linking route, displays the resource selection view
 lti.app.get('/deeplink', async (req, res) => {
-  return res.sendFile(path.join(__dirname, '/public/resources.html'))
+  return lti.redirect(res, '/deeplink', { newResource: true })
 })
 
 lti.app.post('/deeplink', async (req, res) => {
@@ -69,7 +73,7 @@ lti.app.post('/deeplink', async (req, res) => {
   ]
 
   // Creates the deep linking request form
-  const form = await lti.DeepLinking.createDeepLinkingForm(res.locals.token, items, { message: 'Successfully registered resource!' })
+  const form = await lti.DeepLinking.createDeepLinkingMessage(res.locals.token, items, { message: 'Successfully registered resource!' })
 
   return res.send(form)
 })
