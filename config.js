@@ -15,12 +15,12 @@ var config = {
         https: false
     },
     database: {
-        url: 'mongodb+srv://ltijs-dan.w5pfd.mongodb.net/?retryWrites=true&w=majority',
+        url: 'mongodb+srv://ltijs-dev.w5pfd.mongodb.net/?retryWrites=true&w=majority',
         password: '~S_DB_MONOGDB_LTIJS_PASSWORD~'
     },
-    deepLinkSite: 'https://deeplinkg-dan.peregrineglobal.com',
+    deepLinkSite: 'https://deeplink-dev.peregrineglobal.com',
     pasApi: {
-        baseUrl: 'https://api-dan.peregrineglobal.com'
+        baseUrl: 'https://api-dev.peregrineglobal.com'
     }
 }
 
